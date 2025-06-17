@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register Form </title>
+
+<link rel="icon" href="https://cdn-icons-png.flaticon.com/512/4436/4436481.png" type="image/png" />
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous" />
+
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css/index.css">
+
+
+
+<body>
+<div class="container ">
+<div class="row justify-content-center">
+  <div class="col-md-8 col-lg-6">
+    <div class="registration-card  ">
+      <div class="card-header">
+        <h3><i class="fas fa-user-plus me-2"></i>Create Your Account</h3>
+      </div>
+      <div class="card-body">
+        <form id="registration-form">
+          <div class="mb-4">
+            <label for="fullname" class="form-label">Full Name</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="fas fa-user regIcon"></i></span>
+              <input type="text" class="form-control" id="fullname" name="fullname"
+                placeholder="Enter your full name" />
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <label for="email" class="form-label">Email Address</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="fas fa-envelope regIcon"></i></span>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" />
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <!-- <label for="password" class="form-label">Password</label> -->
+            <div class="input-group">
+
+
+              <button type="submit" class="btn btn-primary w-100 mb-3">
+                <i class="fas fa-user-plus me-2"></i>Register Now
+              </button>
+
+              
+              <div class="login-link">
+                Already have an account? <a href="pages/registration.html">Register Now</a>
+              </div>
+              
+            </form>
+  <div class="text-center">
+             <h5 class="text-center"></h5>
+  </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+<script src="script/index.js"></script>
+</body>
+
+</html>

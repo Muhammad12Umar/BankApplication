@@ -1,0 +1,192 @@
+  * {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+  }
+
+  :root {
+    --primary-color: #4e73df;
+    --secondary-color: #f8f9fc;
+    --accent-color: #2e59d9;
+    --text-color: #5a5c69;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+    overflow: hidden;
+  }
+
+  .registration-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.9);
+    transition: all 0.3s ease;
+    height: 100vh;
+    
+  
+
+  }
+
+  .registration-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  }
+
+  .card-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    border-bottom: none;
+  }
+
+  .card-header h3 {
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .card-body {
+    padding: 20px;
+    background-color: white;
+
+  }
+
+  .form-control {
+    border-radius: 8px;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    transition: all 0.3s;
+  }
+
+  .form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(78, 115, 223, 0.25);
+    border: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s;
+  }
+.container{
+width: 100%;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-2px);
+  }
+
+  .form-label {
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+
+  .input-group-text {
+    background-color: #f8f9fc;
+    border-right: none;
+  }
+
+  .input-group .form-control {
+    border-left: none;
+  }
+
+  .divider {
+    position: relative;
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .divider::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: #eee;
+    z-index: 1;
+  }
+
+  .divider span {
+    position: relative;
+    display: inline-block;
+    padding: 0 10px;
+    background-color: white;
+    z-index: 2;
+    color: #aaa;
+    font-size: 14px;
+  }
+
+  .social-login {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+
+  .social-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    transition: all 0.3s;
+  }
+
+
+  .login-link {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .login-link a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .login-link a:hover {
+    text-decoration: underline;
+  }
+
+  .result-message {
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 15px;
+    font-weight: 500;
+  }
+
+  .regIcon {
+    font-size: 20px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+  }
+
+  .success {
+    background-color: #d4edda;
+    color: #155724;
+  }
+
+  .error {
+    background-color: #f8d7da;
+    color: #721c24;
+  }

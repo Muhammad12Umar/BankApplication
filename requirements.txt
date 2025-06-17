@@ -1,0 +1,12 @@
+users Name showing 
+first letter in  capital
+showing email 
+showDate
+showTime with  Each todo 
+Add
+delete 
+edit 
+marks read 
+responsive 
+showing mode dark and light .
+seerching to do application
