@@ -22,7 +22,9 @@ body {
   color: var(--text-color);
   overflow: hidden;
 }
-
+.registration-container{
+  width: 80%;
+}
 .registration-card {
   border: none;
   border-radius: 15px;

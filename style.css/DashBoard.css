@@ -121,15 +121,17 @@
  }
 
  .myTaskDiv {
-   margin-bottom: 30px;
-   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-   padding: 10px;
+   
+   
    display: flex;
+   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
    justify-content: space-between;
-   align-items: center;
    box-shadow: 0 0 6px linear-gradient(135deg, #667eea 0%, #764ba2 100%);
    border-radius: 6px;
    color: white;
+   height: 14vh;
+   align-items: center;
+   padding: 10px;
 
  }
 
@@ -139,12 +141,12 @@
  }
 
  .Task {
-   font-size: 28px;
+   font-size: 20px;
    margin-bottom: 5px;
  }
 
  .Date {
-   font-size: 18px;
+   font-size: 14px;
    font-weight: bold;
 
  }
@@ -361,3 +363,5 @@
      display: block;
    }
  }
+
+
