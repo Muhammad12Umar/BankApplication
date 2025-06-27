@@ -1,3 +1,5 @@
+
+// password Toggling ..
 document.getElementById('togglePassword').addEventListener('click', function () {
     const passwordInput = document.getElementById('password');
     const icon = this.querySelector('i');
@@ -12,7 +14,7 @@ document.getElementById('togglePassword').addEventListener('click', function () 
 });
 
 
-
+// registration code is here .
 const resultMessage = document.querySelector(".text-center");
 const registrationForm = document.querySelector("#registration-form");
 registrationForm.addEventListener("submit", function (event) {
@@ -22,7 +24,7 @@ registrationForm.addEventListener("submit", function (event) {
     const users = JSON.parse(localStorage.getItem("users")) || [];
 
     // targeted
-    const name = event.target.fullname.value
+    const names = event.target.fullname.value
     const email = event.target.email.value;
     const cnic = event.target.cnic.value;
     const passsword = event.target.password.value
@@ -56,7 +58,7 @@ registrationForm.addEventListener("submit", function (event) {
         resultMessage.style.color = textColor;
     }
 
-    if (name.trim() === "" || !isNaN(name)) {
+    if (names.trim() === "" || !isNaN(names)) {
         conditions("Please Enter Your Name", "red")
 
     }
@@ -80,9 +82,13 @@ registrationForm.addEventListener("submit", function (event) {
 
     else {
         const user = {
-            name, email, passsword, cnic,gender
+            names, email, passsword, cnic,gender
         }
         users.push(user)
+        
+        conditions(`Account Created For :  ${names}`,"green")
+
+        
 
         localStorage.setItem('users', JSON.stringify(users))
 
