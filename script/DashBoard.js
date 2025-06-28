@@ -18,7 +18,7 @@ const brachAddress = document.querySelector(".brachAddress");
 const printStatment = document.querySelector(".printStatment");
 const DepositForm = document.querySelector('#DepositForm');
 const WithDrawForm = document.querySelector("#WithDrawForm");
-const amountBalance=document.querySelector(".amountBalance");
+const amountBalance = document.querySelector(".amountBalance");
 
 
 
@@ -91,10 +91,14 @@ hamburger.addEventListener("click", function () {
 
 
 
+
+
 class Bank {
+
     constructor(BankName, balance) {
         this.BankName = BankName;
         this.balance = balance;
+
 
 
     }
@@ -129,15 +133,17 @@ Account.prototype.detail = function () {
 
 }
 
-// Show Balance
+
 
 // Fixed Deposit
 Account.prototype.Deposit = function (amount) {
     if (amount <= 0) {
-    alert('❌ Invalid deposit amount.');
+        alert('❌ Invalid deposit amount.');
     } else {
         this.balance += amount;
         alert(`✅ Deposit Successful. New Balance: Rs. ${this.balance}`);
+
+
     }
 }
 
@@ -147,7 +153,9 @@ Account.prototype.showBalance = function () {
     balance.textContent = ` Rs. ${this.balance}`
     AccountType.textContent = `${this.AccountType}`
     BankName.textContent = `${this.BankName.toUpperCase()}`
-    amountBalance.textContent=`${this.balance}`
+    amountBalance.textContent = `${this.balance}`
+
+
 
 }
 
@@ -157,16 +165,33 @@ Account.prototype.withDraw = function (amount) {
     } else {
         this.balance -= amount;
         alert(`✅ WithDraw Successful. New Balance: Rs. ${this.balance}`);
+
     }
 }
 
+// Save to local  Storage.
+
+window.addEventListener("DOMContentLoaded", function () {
+    let Save = JSON.parse(localStorage.getItem("userBalance"));
+    amountBalance.textContent = Save;
+    balance.textContent=Save;
+
+})
+
+
 const result = new Account("Saving  Account", 'BANK OF UBL ', 0, 1, "Peshawer Board Bazar");
+Account.prototype.SaveBalance = function () {
+    localStorage.setItem("userBalance", this.balance)
+}
+
 
 // printing  The Data Detail
-
 printStatment.addEventListener("click", function () {
-    print(result.detail())
-})
+  const printArea=document.querySelector(".printArea").innerHTML;
+  document.body.innerHTML=printArea;
+  window.print();
+});
+
 
 // form of deposit
 DepositForm.addEventListener("submit", function (event) {
@@ -176,13 +201,13 @@ DepositForm.addEventListener("submit", function (event) {
 
     result.Deposit(depositValue);
 
-    event.target.reset();
-
+    result.SaveBalance();
 
     result.showBalance();
 
 
 
+    event.target.reset();
 
 })
 
@@ -191,10 +216,13 @@ DepositForm.addEventListener("submit", function (event) {
 WithDrawForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    const withDrawValue = event.target.WithdrawInput.value;
+    const withDrawValue = +event.target.WithdrawInput.value;
 
     result.withDraw(withDrawValue)
-    
+    result.SaveBalance();
+
+
+
     result.showBalance();
 
     event.target.reset();
