@@ -1,7 +1,5 @@
-
 // Get the logged-in user from localStorage
 const currentUser = JSON.parse(localStorage.getItem("LoginUsers")); // Assuming only one user is logged in at a time
-
 
 // DOM Elements
 const date = document.querySelector(".Date");
@@ -16,13 +14,9 @@ const BankName = document.querySelector(".BankName");
 const BrachNo = document.querySelector(".BrachNo");
 const brachAddress = document.querySelector(".brachAddress");
 const printStatment = document.querySelector(".printStatment");
-const DepositForm = document.querySelector('#DepositForm');
+const DepositForm = document.querySelector("#DepositForm");
 const WithDrawForm = document.querySelector("#WithDrawForm");
 const amountBalance = document.querySelector(".amountBalance");
-
-
-
-
 
 // Show Greeting
 function greet(greetValue) {
@@ -88,19 +82,10 @@ hamburger.addEventListener("click", function () {
     aside.classList.toggle("active");
 });
 
-
-
-
-
-
 class Bank {
-
     constructor(BankName, balance) {
         this.BankName = BankName;
         this.balance = balance;
-
-
-
     }
 }
 
@@ -121,81 +106,79 @@ class Account extends Branch {
 
 // Details
 Account.prototype.detail = function () {
-
     console.log(`The Branch Address is ${this.brachAddress}`);
     console.log(`The Branch NO is ${this.BranchNo}`);
     console.log(`The Balance is ${this.balance}`);
     console.log(`The Account  Type is : ${this.AccountType}`);
     console.log(`The Bank Name  is : ${this.BankName}`);
-
-
-
-
-}
-
-
+};
 
 // Fixed Deposit
 Account.prototype.Deposit = function (amount) {
     if (amount <= 0) {
-        alert('❌ Invalid deposit amount.');
+        alert("❌ Invalid deposit amount.");
     } else {
         this.balance += amount;
         alert(`✅ Deposit Successful. New Balance: Rs. ${this.balance}`);
-
-
     }
-}
+};
 
+// Show Balance Funtion.
 Account.prototype.showBalance = function () {
     brachAddress.textContent = this.BranchAddress;
-    BrachNo.textContent = `${this.BranchNo}`
-    balance.textContent = ` Rs. ${this.balance}`
-    AccountType.textContent = `${this.AccountType}`
-    BankName.textContent = `${this.BankName.toUpperCase()}`
-    amountBalance.textContent = `${this.balance}`
+    BrachNo.textContent = `${this.BranchNo}`;
+    balance.textContent = ` Rs. ${this.balance}`;
+    AccountType.textContent = `${this.AccountType}`;
+    BankName.textContent = `${this.BankName.toUpperCase()}`;
+    amountBalance.textContent = `${this.balance}`;
+};
 
-
-
-}
-
+// With Draw Funtion
 Account.prototype.withDraw = function (amount) {
     if (amount > this.balance) {
-        alert('❌ Insufficient Balance !');
+        alert("❌ Insufficient Balance !");
     } else {
         this.balance -= amount;
         alert(`✅ WithDraw Successful. New Balance: Rs. ${this.balance}`);
-
     }
-}
+};
 
 // Save to local  Storage.
 
 window.addEventListener("DOMContentLoaded", function () {
     let Save = JSON.parse(localStorage.getItem("userBalance"));
     amountBalance.textContent = Save;
-    balance.textContent=Save;
-
-})
-
-
-const result = new Account("Saving  Account", 'BANK OF UBL ', 0, 1, "Peshawer Board Bazar");
-Account.prototype.SaveBalance = function () {
-    localStorage.setItem("userBalance", this.balance)
-}
-
-
-// printing  The Data Detail
-printStatment.addEventListener("click", function () {
-  const printArea=document.querySelector(".printArea").innerHTML;
-  document.body.innerHTML=printArea;
-  window.print();
+    this.balance.textContent = `Rs ${Save}`;
+    result.balance = Save;
 });
 
+const result = new Account(
+    "Saving Account",
+    "BANK OF UBL",
+    0,
+    1,
+    "Peshawer Board Bazar"
+);
 
-// form of deposit
+// Saveing Balance in  local storage.Funtion .
+Account.prototype.SaveBalance = function () {
+    localStorage.setItem("userBalance", this.balance);
+};
+
+// print Funtion of save Balance here .
+printStatment.addEventListener("click", function () {
+    const printArea = document.querySelector(".printArea").innerHTML;
+    const originalContents = document.body.innerHTML;
+
+    document.body.innerHTML = printArea;
+    window.print();
+    document.body.innerHTML = originalContents;
+    location.reload(); // to restore events & DOM
+});
+
+// Form of Deposit Model
 DepositForm.addEventListener("submit", function (event) {
-    event.preventDefault()
+    event.preventDefault();
 
     const depositValue = +event.target.DepositInput.value;
 
@@ -205,43 +188,24 @@ DepositForm.addEventListener("submit", function (event) {
 
     result.showBalance();
 
-
-
     event.target.reset();
+});
 
-})
-
-// withDraw Deposit Amounts
+// Form of withDraw Model
 
 WithDrawForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
     const withDrawValue = +event.target.WithdrawInput.value;
 
-    result.withDraw(withDrawValue)
+    result.withDraw(withDrawValue);
     result.SaveBalance();
-
-
 
     result.showBalance();
 
     event.target.reset();
-
-
-
-
-})
+});
 
 result.showBalance();
 
-
-
-
-
-
-
-
-
-
 // Use Deposit method
-
