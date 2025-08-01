@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Register Form </title>
+<title>Login Form </title> 
 
 <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/4436/4436481.png" type="image/png" />
 
@@ -31,23 +31,26 @@ integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879
         <h3><i class="fas fa-user-plus me-2"></i>Login Your Account</h3>
       </div>
       <div class="card-body">
-        <form id="registration-form">
-          <div class="mb-4">
-            <label for="fullname" class="form-label">Full Name</label>
-            <div class="input-group">
-              <span class="input-group-text"><i class="fas fa-user regIcon"></i></span>
-              <input type="text" class="form-control" id="fullname" name="fullname"
-                placeholder="Enter your full name" />
-            </div>
-          </div>
+        <form id="login-form">
 
-          <div class="mb-4">
+           <div class="mb-4">
             <label for="email" class="form-label">Email Address</label>
             <div class="input-group">
               <span class="input-group-text"><i class="fas fa-envelope regIcon"></i></span>
               <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" />
             </div>
           </div>
+
+          <div class="mb-4">
+            <label for="password" class="form-label">Password</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="fas fa-user regIcon"></i></span>
+              <input type="text" class="form-control" id="password" name="fullname"
+                placeholder="Enter Your Password " />
+            </div>
+          </div>
+
+         
 
           
 
@@ -66,9 +69,9 @@ integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879
               </div>
               
             </form>
-  <div class="text-center">
-             <h5 class="text-center"></h5>
-  </div>
+  
+             <h5 class="message"></h5>
+  
 
       </div>
     </div>

@@ -315,15 +315,15 @@
         position: fixed;
         top: 0;
         left: -100%;
-        width: 280px;
+        width: 235px;
         height: 100vh;
         transition: all 0.3s ease;
         z-index: 1000;
       }
 
-      .Aside.active {
+       .active {
         left: 0;
-      }
+      } 
 
       .content {
         margin-left: 0;

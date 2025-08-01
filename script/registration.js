@@ -26,8 +26,9 @@ registrationForm.addEventListener("submit", function (event) {
     // targeted
     const names = event.target.fullname.value
     const email = event.target.email.value;
-    const cnic = event.target.cnic.value;
-    const passsword = event.target.password.value
+    const balance = event.target.balance.value;
+    const password = event.target.password.value
+    const Account=event.target.Account.value;
     // Target Genders Fields.
 
     const selectedGender = document.querySelector('input[name="gender"]:checked');
@@ -38,7 +39,7 @@ registrationForm.addEventListener("submit", function (event) {
     }
 
     // userExist
-    const userExist = users.find(item => item.email === email && item.name===name)
+    const userExist = users.find(item => item.email === email)
 
     if (userExist) {
         resultMessage.textContent = "Your are Already Exist Please Login🤔";
@@ -46,9 +47,6 @@ registrationForm.addEventListener("submit", function (event) {
         location.href = "../index.html"
         return;
         
-
-
-
     }
 
 
@@ -67,13 +65,16 @@ registrationForm.addEventListener("submit", function (event) {
         conditions("Please Enter Your Email", "red")
 
     }
+    else if (!Account){
+        conditions("Please Enter Your Account","red");
+    }
 
-    else if (cnic.trim() === "" || cnic.length <= 4) {
+    else if (balance.trim() === "" ) {
         conditions("Please Enter Your CNIC", "red")
 
     }
 
-    else if (passsword.trim() === "" || passsword.length <= 4) {
+    else if (password.trim() === "" || password.length <= 4) {
         conditions("Please Enter Your Password", "red")
 
     }
@@ -82,7 +83,7 @@ registrationForm.addEventListener("submit", function (event) {
 
     else {
         const user = {
-            names, email, passsword, cnic,gender
+            names, email, password, balance,gender,Account
         }
         users.push(user)
         
