@@ -26,9 +26,22 @@ registrationForm.addEventListener("submit", function (event) {
     // targeted
     const names = event.target.fullname.value
     const email = event.target.email.value;
-    const balance = event.target.balance.value;
+    const balance = +event.target.balance.value;
     const password = event.target.password.value
-    const Account=event.target.Account.value;
+    const phone=event.target.phone.value;
+    const dob=event.target.dob.value;
+    const accountType=event.target.accountType.value;
+    const confirmPassword=event.target.confirmPassword.value;
+
+    // funtion Messaging .
+    function showMessage  (text,color) {
+    resultMessage.textContent=text;
+    resultMessage.style.color=color;
+        
+    }
+    
+
+
     // Target Genders Fields.
 
     const selectedGender = document.querySelector('input[name="gender"]:checked');
@@ -48,46 +61,19 @@ registrationForm.addEventListener("submit", function (event) {
         return;
         
     }
-
-
-    // conditions....
-    function conditions(text, textColor) {
-        resultMessage.textContent = text;
-        resultMessage.style.color = textColor;
+    else if (password !=confirmPassword){
+        resultMessage.textContent="Password Donot Match";
+        resultMessage.style.color='red'
     }
 
-    if (names.trim() === "" || !isNaN(names)) {
-        conditions("Please Enter Your Name", "red")
+    else{
 
-    }
-
-    else if (email.trim() === "" || !email.includes("@")) {
-        conditions("Please Enter Your Email", "red")
-
-    }
-    else if (!Account){
-        conditions("Please Enter Your Account","red");
-    }
-
-    else if (balance.trim() === "" ) {
-        conditions("Please Enter Your CNIC", "red")
-
-    }
-
-    else if (password.trim() === "" || password.length <= 4) {
-        conditions("Please Enter Your Password", "red")
-
-    }
-
-
-
-    else {
         const user = {
-            names, email, password, balance,gender,Account
+            names, email, password, balance,gender,phone,dob,accountType,confirmPassword
         }
         users.push(user)
         
-        conditions(`Account Created For :  ${names}`,"green")
+        showMessage(`Account Created For :  ${names}`,"green")
 
         
 
@@ -95,9 +81,16 @@ registrationForm.addEventListener("submit", function (event) {
 
         event.target.reset();
 
-
-
     }
+
+
+   
+
+
+
+
+
+    
 
 
 
