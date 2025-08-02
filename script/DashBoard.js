@@ -116,7 +116,7 @@ Account.prototype.Deposit = function (amount) {
     localStorage.setItem("user", JSON.stringify(loginUser));
     localStorage.setItem("users", JSON.stringify(users));
   
-    alert(`✅ Deposit Successful. New Balance: Rs. ${this.balance}`);
+    alert(`✅ Deposit Successful. New Balance: Rs. ${loginUser.balance}`);
   }
 };
 
