@@ -126,7 +126,7 @@ Account.prototype.showBalance = function () {
   balance.textContent = loginUser.balance;
   brachAddress.textContent = this.BranchAddress;
   BrachNo.textContent = `${this.BranchNo}`;
-  AccountType.textContent = `${loginUser.Account}`;
+  AccountType.textContent = `${loginUser.accountType}`;
   BankName.textContent = `${this.BankName.toUpperCase()}`;
 };
 
@@ -145,7 +145,7 @@ Account.prototype.withDraw = function (amount) {
   }
 };
 
-const result = new Account("BANK OF UBL", 1, "Peshawer Board Bazar");
+const result = new Account("BANK OF UBL", 1, "Peshawer");
 
 // print Funtion of save Balance here .
 printStatment.addEventListener("click", function () {

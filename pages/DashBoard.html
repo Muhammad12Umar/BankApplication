@@ -1,205 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BANK OF UBL - DASHBOARD</title>
+    <link
+      rel="icon"
+      href="https://cdn-icons-png.flaticon.com/512/4436/4436481.png"
+      type="image/png"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../style.css/DashBoard.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BANK OF UBL - DASHBOARD</title>
-  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/4436/4436481.png" type="image/png" />
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="../style.css/DashBoard.css">
+  <body>
+    <!-- Hamburger Menu Button (visible on mobile) -->
+    <button class="hamburger d-lg-none"><i class="fas fa-bars"></i></button>
 
-</head>
-
-<body>
-  <!-- Hamburger Menu Button (visible on mobile) -->
-  <button class="hamburger d-lg-none"><i class="fas fa-bars"></i></button>
-
-  <main>
-    <div class="DashBoard">
-      <!-- Sidebar Navigation -->
-      <div class="Aside">
-        <div class="profile">
-          <h1 class="nameLetter"></h1>
-          <h3 class="name"></h3>
-          <p class="email"></p>
-        </div>
-
-        <div class="settingWithIcon">
-          <button class="hamburger d-lg-none mb-3"><i class="fas fa-bars"></i> Menu</button>
-          <p class="myTask"><i class="fas fa-tasks"></i> My Tasks</p>
-          <p class="calender"><i class="fas fa-calendar-alt"></i> Calendar</p>
-          <p class="setting"><i class="fas fa-cog"></i> Settings</p>
-        </div>
-
-        <div class="logOutButton">
-          <button class="logOutButtonBtn"><i class="fas fa-sign-out-alt"></i> Log Out</button>
-        </div>
-      </div>
-
-      <!-- Main Content Area -->
-      <div class="content">
-        <div class="myTaskDiv">
-          <div>
-            <h5 class="Greeting"></h5>
-            <h6 class="Task">WELCOME TO <span class="BankName"><i class="fas fa-university me-2"></i> BANK OF
-                KHYBER</span></h6>
+    <main>
+      <div class="DashBoard">
+        <!-- Sidebar Navigation -->
+        <div class="Aside">
+          <div class="profile">
+            <h1 class="nameLetter"></h1>
+            <h3 class="name"></h3>
+            <p class="email"></p>
           </div>
-          <span class="Date"></span>
+
+          <div class="settingWithIcon">
+            <button class="hamburger d-lg-none mb-3">
+              <i class="fas fa-bars"></i> Menu
+            </button>
+            <p class="myTask"><i class="fas fa-tasks"></i> My Tasks</p>
+            <p class="calender"><i class="fas fa-calendar-alt"></i> Calendar</p>
+            <p class="setting"><i class="fas fa-cog"></i> Settings</p>
+          </div>
+
+          <div class="logOutButton">
+            <button class="logOutButtonBtn">
+              <i class="fas fa-sign-out-alt"></i> Log Out
+            </button>
+          </div>
         </div>
 
-        <!-- Banking Functionality Cards -->
-        <div class="showFuntionality">
-          <!-- Balance Card -->
-          <div class="ShowBalane Card">
+        <!-- Main Content Area -->
+        <div class="content">
+          <div class="myTaskDiv">
             <div>
-              <i class="fas fa-wallet"></i>
-              <h2>Account Balance</h2>
-              <p class="amountBalance">PKR *******</p>
+              <h5 class="Greeting"></h5>
+              <h6 class="Task">
+                WELCOME TO
+                <span class="BankName"
+                  ><i class="fas fa-university me-2"></i> BANK OF KHYBER</span
+                >
+              </h6>
             </div>
-            <div class="btnShowBalance">
-              <button class="btnShow" data-bs-toggle="modal" data-bs-target="#ShowBalance">
-                <i class="fas fa-eye"></i> Show Balance
-              </button>
-            </div>
+            <span class="Date"></span>
           </div>
 
-          <!-- Deposit Card -->
-          <div class="Deposit Card">
-            <div>
-              <i class="fas fa-arrow-circle-down"></i>
-              <h2>Deposit Funds</h2>
-              <p class="amountBalance">Add Money to Account</p>
-            </div>
-            <div class="btnDeposit">
-              <button class="btn-Deposit" data-bs-toggle="modal" data-bs-target="#depositModal">
-                <i class="fas fa-plus-circle"></i> Deposit
-              </button>
-            </div>
-          </div>
-
-          <!-- Withdraw Card -->
-          <div class="withDraw Card">
-            <div>
-              <i class="fas fa-arrow-circle-up"></i>
-              <h2>Withdraw Funds</h2>
-              <p class="amountBalance">Get Cash from Account</p>
-            </div>
-            <div class="btnWithDraw">
-              <button class="btn-withDraw" data-bs-toggle="modal" data-bs-target="#withdrawModal">
-                <i class="fas fa-minus-circle"></i> Withdraw
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
-
-  <!-- Show Balance Modal -->
-  <div class="modal fade" id="ShowBalance" tabindex="-1" aria-labelledby="ShowBalanceLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="ShowBalanceLabel"><i class="fas fa-wallet me-2"></i>Account Balance</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="printArea">
-          <div class="modal-body text-center">
-            <h2 class="display-4 my-4 ShowBalance">PKR 25,000.00</h2>
-            <p class="text-muted">Available Balance</p>
-            <hr>
-            <div class="row text-start">
-              <div class="col-6">
-                <p class="mb-2"><i class="fas fa-user-tie me-2"></i>Account Type:</p>
-                <p class="mb-2"><i class="fas fa-code-branch me-2"></i>Branch No:</p>
-                <p class="mb-2"><i class="fas fa-map-marker-alt me-2"></i>Branch Address:</p>
+          <!-- Banking Functionality Cards -->
+          <div class="showFuntionality">
+            <!-- Balance Card -->
+            <div class="ShowBalane Card">
+              <div>
+                <i class="fas fa-wallet"></i>
+                <h2>Account Balance</h2>
+                <p class="amountBalance">PKR *******</p>
               </div>
-              <div class="col-6 text-end">
-                <p class="mb-2"><strong class="AccountType">Premium Checking</strong></p>
-                <p class="mb-2"><strong class="BrachNo">KHY-042</strong></p>
-                <p class="mb-2"><strong class="brachAddress">Main Branch, Peshawar</strong></p>
+              <div class="btnShowBalance">
+                <button
+                  class="btnShow"
+                  data-bs-toggle="modal"
+                  data-bs-target="#ShowBalance"
+                >
+                  <i class="fas fa-eye"></i> Show Balance
+                </button>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-            <i class="fas fa-times me-2"></i>Close
-          </button>
-          <button type="button" class="btn btn-primary printStatment">
-            <i class="fas fa-print me-2"></i>Print Statement
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <!-- Deposit Modal -->
-  <div class="modal fade" id="depositModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title"><i class="fas fa-piggy-bank me-2"></i>Make Deposit</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <form id="DepositForm" class="p-4">
-          <div class="mb-4">
-            <label for="DepositInput" class="form-label">
-              <i class="fas fa-money-bill-wave me-2"></i>Deposit Amount
-            </label>
-            <div class="input-group">
-              <span class="input-group-text">PKR</span>
-              <input type="number" class="form-control" id="DepositInput" name="amount" placeholder="Enter Amount"
-                min="100" step="100" required />
+            <!-- Deposit Card -->
+            <div class="Deposit Card">
+              <div>
+                <i class="fas fa-arrow-circle-down"></i>
+                <h2>Deposit Funds</h2>
+                <p class="amountBalance">Add Money to Account</p>
+              </div>
+              <div class="btnDeposit">
+                <button
+                  class="btn-Deposit"
+                  data-bs-toggle="modal"
+                  data-bs-target="#depositModal"
+                >
+                  <i class="fas fa-plus-circle"></i> Deposit
+                </button>
+              </div>
             </div>
-            <small class="text-muted">Minimum deposit: PKR 100</small>
-          </div>
-          <button type="submit" class="btn btn-success w-100 mb-3">
-            <i class="fas fa-coins me-2"></i>Deposit Now
-          </button>
-        </form>
-      </div>
-    </div>
-  </div>
 
-  <!-- Withdraw Modal -->
-  <div class="modal fade" id="withdrawModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title"><i class="fas fa-hand-holding-usd me-2"></i>Make Withdrawal</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <form id="WithDrawForm" class="p-4">
-          <div class="mb-4">
-            <label for="WithdrawInput" class="form-label">
-              <i class="fas fa-money-bill-wave me-2"></i>Withdrawal Amount
-            </label>
-            <div class="input-group">
-              <span class="input-group-text">PKR</span>
-              <input type="number" class="form-control" id="WithdrawInput" name="amount" placeholder="Enter Amount"
-                min="500" step="100" required />
+            <!-- Withdraw Card -->
+            <div class="withDraw Card">
+              <div>
+                <i class="fas fa-arrow-circle-up"></i>
+                <h2>Withdraw Funds</h2>
+                <p class="amountBalance">Get Cash from Account</p>
+              </div>
+              <div class="btnWithDraw">
+                <button
+                  class="btn-withDraw"
+                  data-bs-toggle="modal"
+                  data-bs-target="#withdrawModal"
+                >
+                  <i class="fas fa-minus-circle"></i> Withdraw
+                </button>
+              </div>
             </div>
-            <small class="text-muted">Minimum withdrawal: PKR 500</small>
           </div>
-          <button type="submit" class="btn btn-danger w-100 mb-3">
-            <i class="fas fa-money-check-alt me-2"></i>Withdraw Now
-          </button>
-        </form>
+        </div>
+      </div>
+    </main>
+
+    <!-- Show Balance Modal -->
+    <div
+      class="modal fade"
+      id="ShowBalance"
+      tabindex="-1"
+      aria-labelledby="ShowBalanceLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="ShowBalanceLabel">
+              <i class="fas fa-wallet me-2"></i>Account Balance
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="printArea">
+            <div class="modal-body text-center">
+              <h2 class="display-4 my-4 ShowBalance">PKR 25,000.00</h2>
+              <p class="text-muted">Available Balance</p>
+              <hr />
+              <div class="row text-start">
+                <div class="col-6">
+                  <p class="mb-2">
+                    <i class="fas fa-user-tie me-2"></i>Account Type:
+                  </p>
+                  <p class="mb-2">
+                    <i class="fas fa-code-branch me-2"></i>Branch No:
+                  </p>
+                  <p class="mb-2">
+                    <i class="fas fa-map-marker-alt me-2"></i>Branch Address:
+                  </p>
+                </div>
+                <div class="col-6 text-end">
+                  <p class="mb-2">
+                    <strong class="AccountType">Premium Checking</strong>
+                  </p>
+                  <p class="mb-2"><strong class="BrachNo">KHY-042</strong></p>
+                  <p class="mb-2">
+                    <strong class="brachAddress">Main Branch, Peshawar</strong>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              <i class="fas fa-times me-2"></i>Close
+            </button>
+            <button type="button" class="btn btn-primary printStatment">
+              <i class="fas fa-print me-2"></i>Print Statement
+            </button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Bootstrap JS Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../script/DashBoard.js"></script>
-</body>
+    <!-- Deposit Modal -->
+    <div class="modal fade" id="depositModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">
+              <i class="fas fa-piggy-bank me-2"></i>Make Deposit
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <form id="DepositForm" class="p-4">
+            <div class="mb-4">
+              <label for="DepositInput" class="form-label">
+                <i class="fas fa-money-bill-wave me-2"></i>Deposit Amount
+              </label>
+              <div class="input-group">
+                <span class="input-group-text">PKR</span>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="DepositInput"
+                  name="amount"
+                  placeholder="Enter Amount"
+                  min="100"
+                  step="100"
+                  required
+                />
+              </div>
+              <small class="text-muted">Minimum deposit: PKR 100</small>
+            </div>
+            <button type="submit" class="btn btn-success w-100 mb-3">
+              <i class="fas fa-coins me-2"></i>Deposit Now
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
 
+    <!-- Withdraw Modal -->
+    <div class="modal fade" id="withdrawModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">
+              <i class="fas fa-hand-holding-usd me-2"></i>Make Withdrawal
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <form id="WithDrawForm" class="p-4">
+            <div class="mb-4">
+              <label for="WithdrawInput" class="form-label">
+                <i class="fas fa-money-bill-wave me-2"></i>Withdrawal Amount
+              </label>
+              <div class="input-group">
+                <span class="input-group-text">PKR</span>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="WithdrawInput"
+                  name="amount"
+                  placeholder="Enter Amount"
+                  min="500"
+                  step="100"
+                  required
+                />
+              </div>
+              <small class="text-muted">Minimum withdrawal: PKR 500</small>
+            </div>
+            <button type="submit" class="btn btn-danger w-100 mb-3" onclick="">
+              <i class="fas fa-money-check-alt me-2"></i>Withdraw Now
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../script/DashBoard.js"></script>
+  </body>
 </html>
